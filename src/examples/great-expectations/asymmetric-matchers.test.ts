@@ -24,4 +24,15 @@ it('include cool computer scientists by virtue of them being in the club', () =>
   addToCoolKidsClub(createComputerScientist('Ada', 'Lovelace'), people);
   addToCoolKidsClub(createComputerScientist('Annie', 'Easley'), people);
   addToCoolKidsClub(createComputerScientist('Dorothy', 'Vaughn'), people);
+
+  for (const person of people) {
+    expect(person).toEqual({
+      id: expect.stringMatching(
+        /^cs-[0-9A-F]{8}-[0-9A-F]{4}-[34][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i,
+      ),
+      firstName: expect.any(String),
+      lastName: expect.any(String),
+      isCool: true,
+    });
+  }
 });
