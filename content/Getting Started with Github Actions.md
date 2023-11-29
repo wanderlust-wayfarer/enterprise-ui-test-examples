@@ -46,7 +46,7 @@ Okay, so what's going on here:
   - `actions/setup-node@v3`: We gave this one the cute name "Setup Node" as well. But, this one does what it says on the tin. It installs Node.js onto whatever container your action is running in.
   - `run`: I'll get into this in a bit, but really, you have two major types of _things_ you can do: `run` commands and `use` actions. In this case, we're running `npm ci` and then `npm test`.
 
-# Whoa, What is `npm ci`?
+## Whoa, What is `npm ci`?
 
 [`npm ci`](https://docs.npmjs.com/cli/v9/commands/npm-ci) is a variation on `npm install`, but it has a few important cavaets:
 
@@ -58,7 +58,7 @@ Okay, so what's going on here:
 
 ![](../assets/your-first-actions.png)
 
-# Exercise: Add a Build Step
+## Exercise: Add a Build Step
 
 - Right now `build-and-test` only tests. Add a step that runs `npm run build` to the action
 - **Bonus 1:**: Add a name to the step where we check out the repository.
