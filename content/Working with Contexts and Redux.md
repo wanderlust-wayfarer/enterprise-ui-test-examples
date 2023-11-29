@@ -1,6 +1,5 @@
 # Working with Redux Contexts
 
-
 Back when we were looking at the Packing List application. I noted that these two tests were subtly-flawed.
 
 ```ts
@@ -46,7 +45,7 @@ The problem here is that Testing Library renders a new `<PackingList />` compone
 
 This isn't super surprising. It's kind of how hot module reloading works and—besides—closure scope is hard.
 
-# Separating the Component from the Provider
+## Separating the Component from the Provider
 
 If we look in `index.tsx`, we'll see that the `Provider` is wrapped around the entire application by default. This means, we don't really have a way to separate the two. Unless we make one of course.
 
@@ -108,6 +107,6 @@ const render: typeof baseRender = (Component, options) => {
 
 And now everything ought to work as expected.
 
-# Exercise
+## Exercise
 
 Can you refactor our custom `render` method in `./test/utilities.ts` to accept a `store` so that we can reuse it in `task-list.test.tsx`?

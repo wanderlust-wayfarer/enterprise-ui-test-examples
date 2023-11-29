@@ -1,3 +1,5 @@
+# Parameterizing Tests
+
 We can use test.each and describe.each to programmatically generate tests and test suites for us. Consider the following example:
 
 ```ts
@@ -53,7 +55,7 @@ This will generate a number of tests on our behalf. You'll notice that the first
 
 You'll also notice that we can use formatted strings to generate test names.
 
-# Using an Array of Objects
+## Using an Array of Objects
 
 Alternatively, you can use an array of objects to generate your tests.
 
@@ -78,13 +80,13 @@ it.each([
 
 In this example you'll notice that I'm destructuring an object to get the values int he function and I can use `$property` in the string that defines the test name,
 
-# Using a Table
+## Using a Table
 
 There is one other way to generate tests and that's by using a Markdown table.
 
 We might have something like this:
 
-```
+```ts
 polygonType        | sides | sumOfAngles | perimeter | area
 ${'triangle'}      | ${3}  | ${180}      | ${30}     | ${43.3012701892219}
 ${'quadrilateral'} | ${4}  | ${360}      | ${40}     | ${100}
@@ -117,13 +119,12 @@ describe.each`
 );
 ```
 
-# Exercise
+## Exercise
 
 Take a look at `src/examples/parameterizing-tests/polygon.test.ts`. Can you generate tests based on the data?
 
-# A Secret
+## A Secret
 
 **Nota bene**: This is part of a series of tips and tricks that are definitely bad ideas. That said, they're surprising effective and sometimes you have to break the rules, right?
 
 I know. I have TypeScript to verify that a function will only get the arguments that I say it will. But, TypeScript can only analyze your code base. If a piece of my code has any interaction with the outside world, I might choose to add some guards in order to make sure it doesn't blow up. I'll use test parameters to make this easy for myself.
-

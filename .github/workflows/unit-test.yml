@@ -7,6 +7,21 @@ on:
     branches: [main]
 
 jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧳 Checkout Repo 🧳
+        uses: actions/checkout@v3
+      - name: 📱 Setup Node 📱
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: 🧵 Install Deps 🧵
+        run: npm ci
+      - name: ✨ Prettier Check ✨
+        run: npm run format:check
+
   unit-test:
     runs-on: ubuntu-latest
     steps:

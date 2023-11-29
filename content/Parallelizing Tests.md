@@ -2,7 +2,7 @@
 
 **Nota bene**: In order to parallelize tests, you have to use [Test Context](Test%20Context.md). So, if we haven't talked about that, let's pause and do that now.
 
-**TL;DR** Parallelizing tests is *basically* only useful when you've got a bunch of long-running asynchronous (read: *non-blocking*) tests.
+**TL;DR** Parallelizing tests is _basically_ only useful when you've got a bunch of long-running asynchronous (read: _non-blocking_) tests.
 
 Consider this ridiculous example as a though exercise:
 
@@ -83,6 +83,6 @@ describe.concurrent('sleep', () => {
 
 Now each of the four tests will kick off at the same time. This cut the total time of the suite from around 3.77 seconds down to 1.5 seconds (which is the longest of the sleep times that we passed in.)
 
-# Further Reading
+## Further Reading
 
 - [Vitest: Running Tests Concurrently](https://vitest.dev/guide/features.html#running-tests-concurrently)

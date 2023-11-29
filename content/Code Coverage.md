@@ -27,20 +27,20 @@ If you _don't_ have a coverage reporter installed, Vitest will prompt you to ins
 
 You can do this via:
 
-```
+```sh
 npm test -- --coverage
 npx vitest --coverage
 ```
 
 You'll likely get a new `./coverage` directory. Go take a look. You can spin up a quick web server using:
 
-```
+```sh
 vite preview  --outDir coverage
 ```
 
 This will allow you see where you code is _not_ being tested. (Source: [The documenation for c8](https://github.com/bcoe/c8#ignoring-uncovered-lines-functions-and-blocks).)
 
-# Ignoring Lines
+## Ignoring Lines
 
 You can ignore lines from your coverage report:
 
@@ -61,7 +61,7 @@ function dontMindMe() {
 /* c8 ignore stop */
 ```
 
-# Configuring Your Coverage Report
+## Configuring Your Coverage Report
 
 You can add a `coverage` key to the `test` configuration in your `vitest.config.ts`:
 
@@ -108,7 +108,7 @@ You can see all of the options [here]([GitHub - bcoe/c8: output coverage reports
 
 The cool one here is the ability to set thresholds at which your build will fail if you dip below a certain amount.
 
-```
+```sh
 statements: 54.92,
 thresholdAutoUpdate: true,
 ```
