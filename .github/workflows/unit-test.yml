@@ -9,32 +9,30 @@ on:
 jobs:
   unit-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repo
+      - name: 🧳 Checkout Repo 🧳
         uses: actions/checkout@v3
-
-      - name: Setup Node
+      - name: 📱 Setup Node 📱
         uses: actions/setup-node@v3
-
-      - name: Install Deps
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: 🧵 Install Deps 🧵
         run: npm ci
-
-      - name: Unit Tests
+      - name: ✅ Unit Tests ✅
         run: npm test
 
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repo
+      - name: 🧳 Checkout Repo 🧳
         uses: actions/checkout@v3
-
-      - name: Setup Node
+      - name: 📱 Setup Node 📱
         uses: actions/setup-node@v3
-
-      - name: Install Deps
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: 🧵 Install Deps 🧵
         run: npm ci
-
-      - name: Build Repo
+      - name: 🏡 Build Repo 🏡
         run: npm run build
