@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Enterprise UI Main CI
 
 on:
   push:
