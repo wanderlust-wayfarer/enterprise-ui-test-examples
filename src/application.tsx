@@ -2,7 +2,7 @@ import FizzBuzz from './examples/fizz-buzz';
 import Counter from './examples/counter';
 import CharacterSearch from './examples/character-search';
 import SignUp from './examples/sign-up';
-import PackingList from './examples/packing-list';
+import PackingListContainer from './examples/packing-list';
 import ObstacleCourse from './examples/obstacle-course';
 import TimeZone from './examples/time-zone';
 
@@ -13,7 +13,7 @@ const Application = () => {
       <FizzBuzz />
       <Counter />
       <CharacterSearch />
-      <PackingList />
+      <PackingListContainer />
       <SignUp />
       <ObstacleCourse />
     </main>
