@@ -37,6 +37,25 @@ jobs:
       - name: ✅ Unit Tests ✅
         run: npm test
 
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧳 Checkout Repo 🧳
+        uses: actions/checkout@v3
+      - name: 📱 Setup Node 📱
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: 🧵 Install Deps 🧵
+        run: npm ci
+      - name: 🕵️ Archive Coverage Report 🕵️
+        run: npm test -- --coverage --run
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage
+
   build:
     runs-on: ubuntu-latest
     steps:
